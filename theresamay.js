@@ -117,11 +117,26 @@ theresaMay.prototype.askQuestion = function (question) {
     for (var i = 0; i < responseArray.length; i++) {
         var responseItem = responseArray[i];
 
-        responseItem = responseItem.replace("MATTER", self.matters[Math.floor(Math.random() * self.matters.length)]);
-        responseItem = responseItem.replace("NONSENSE", self.nonsense[Math.floor(Math.random() * self.nonsense.length)]);
-        responseItem = responseItem.replace("PARTYLINE", self.partyLines[Math.floor(Math.random() * self.partyLines.length)]);
-        responseItem = responseItem.replace("THING", self.things[Math.floor(Math.random() * self.things.length)]);
-        responseItem = responseItem.replace("BADTHING", self.badThings[Math.floor(Math.random() * self.badThings.length)]);
+        while (responseItem.includes("MATTER")) {
+            responseItem = responseItem.replace("MATTER", self.matters[Math.floor(Math.random() * self.matters.length)]);
+        }
+
+        while (responseItem.includes("NONSENSE")) {
+            responseItem = responseItem.replace("NONSENSE", self.nonsense[Math.floor(Math.random() * self.nonsense.length)]);
+        }        
+
+        while (responseItem.includes("PARTYLINE")) {
+            responseItem = responseItem.replace("PARTYLINE", self.partyLines[Math.floor(Math.random() * self.partyLines.length)]);
+        }        
+
+        while (responseItem.includes("BADTHING")) {
+            responseItem = responseItem.replace("BADTHING", self.badThings[Math.floor(Math.random() * self.badThings.length)]);
+        }        
+
+        while (responseItem.includes("THING")) {
+            responseItem = responseItem.replace("THING", self.things[Math.floor(Math.random() * self.things.length)]);        
+        }
+        
 
         responseArray[i] = responseItem;
     }
