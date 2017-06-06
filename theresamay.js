@@ -56,7 +56,7 @@ theresaMay = function (){
     self.openingLines = [
         "I have been very clear, and you can see that our record speaks for itself on the matter of MATTER, and I am happy to say NONSENSE. PARTYLINE.",
         "Look, I'm absolutely clear that NONSENSE.",
-        "What we will do in government is continue to put record levels of funding into THING.",
+        "What we have done in government, and what we will continue do in government is to put record levels of funding into THING.",
         "I would say, in answer to that question, judge us on our record of MATTER.",
         "Every vote for Jeremy Corbyn is a vote for BADTHING. Only a conservative government can deliver THING. PARTYLINE."
     ];
@@ -98,7 +98,7 @@ theresaMay = function (){
         "magic money trees",
         "leopard print shoes",
         "child poverty",
-        "record levels of union jack bunting",
+        "union jack bunting",
         "strong and stable leadership"
     ];
 }
@@ -135,8 +135,7 @@ theresaMay.prototype.askQuestion = function (question) {
 
         while (responseItem.includes("THING")) {
             responseItem = responseItem.replace("THING", self.things[Math.floor(Math.random() * self.things.length)]);        
-        }
-        
+        }        
 
         responseArray[i] = responseItem;
     }
