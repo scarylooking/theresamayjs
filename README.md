@@ -6,9 +6,12 @@ The framework attempts to emulate Mrs May by first disregarding the question, th
 
 The code has been poorly thought though and hastily put together under the influence of alcohol so in that regard it is very much like the Conservative Manifesto. It also contains absolutely no costings.
 
+[Demo](https://scarylooking.github.io/theresamayjs)
+
 ## License
 
 Commercial licenses for TheresaMay.js are available to purchase. I will be announcing pricing after a systematic consultation with various arbitrary people down the pub, but what I can say is that there will be a cap of £100,000. There has always been a cap. Anyone who says there wasn’t is presiding over a coalition of chaos.
+
 
 ## Usage
 
