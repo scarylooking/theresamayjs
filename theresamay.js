@@ -9,7 +9,7 @@ theresaMay = function (){
             if (typeof start !== 'number') {
                 start = 0;
             }
-            
+
             if (start + search.length > this.length) {
                 return false;
             } else {
@@ -43,7 +43,7 @@ theresaMay = function (){
 
                 while (k < len) {
                     if (sameValueZero(o[k], searchElement)) {
-                    return true;
+                        return true;
                     }
                     k++;
                 }
@@ -64,12 +64,14 @@ theresaMay = function (){
     self.nonsense = [
         "every vote for me and my team will strengthen my hand in those negotiations",
         "cuts to the police enable them to do a better job",
-        "the money was just resting in my account"
+        "the money was just resting in my account",
+        "we can rely on the aging population to provide us with votes and bolster the economy via the new dementia tax"
     ];
 
     self.partyLines = [
         "Only the Conservative party, led by me, can deliver THING for our country",
         "When you're at the ballot box be very clear that a vote for me is a vote for five years of THING",
+        "We will create a fairer society, based on THING. So more of us can share MATTER"
 
     ];
 
@@ -90,8 +92,10 @@ theresaMay = function (){
         "Diane Abbot",
         "uncontrolled immigration",
         "open borders",
-        "brefrending the IRA",
-        "a coalition of chaos"
+        "befriending the IRA",
+        "a coalition of chaos",
+        "upholding human rights",
+        "free school meals"
     ];
 
     self.things = [
@@ -99,7 +103,8 @@ theresaMay = function (){
         "leopard print shoes",
         "child poverty",
         "union jack bunting",
-        "strong and stable leadership"
+        "strong and stable leadership",
+        "oversized beaded necklaces"
     ];
 }
 
