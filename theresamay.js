@@ -58,7 +58,10 @@ theresaMay = function (){
         "Look, I'm absolutely clear that NONSENSE.",
         "What we have done in government, and what we will continue do in government is to put record levels of funding into THING.",
         "I would say, in answer to that question, judge us on our record of MATTER.",
-        "Every vote for Jeremy Corbyn is a vote for BADTHING. Only a conservative government can deliver THING. PARTYLINE."
+        "Every vote for Jeremy Corbyn is a vote for BADTHING. Only a conservative government can deliver THING. PARTYLINE.",
+        "I'm clear: if human rights laws get in the way of tackling BADTHING, we will change those laws to keep British people safe.",
+        "If we get MATTER right, we can do great things as a country. Vote for me and my team to deliver THING for everyone.",
+        "Let me be clear: MATTER should be the number one priority for any Prime Minister and any Government. PARTYLINE"
     ];
 
     self.nonsense = [
@@ -90,12 +93,16 @@ theresaMay = function (){
     self.badThings = [
         "Jeremy Corbyn",
         "Diane Abbot",
+        "Diane Abbots hairstyles",
         "uncontrolled immigration",
         "open borders",
         "befriending the IRA",
         "a coalition of chaos",
         "upholding human rights",
-        "free school meals"
+        "free school meals",
+        "human rights laws",
+        "end to end encryption",
+        "running in a field of wheat"
     ];
 
     self.things = [
