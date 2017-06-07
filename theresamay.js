@@ -54,28 +54,39 @@ theresaMay = function (){
     }
 
     self.openingLines = [
-        "I have been very clear, and you can see that our record speaks for itself on the matter of MATTER, and I am happy to say NONSENSE. PARTYLINE.",
-        "Look, I'm absolutely clear that NONSENSE.",
-        "What we have done in government, and what we will continue do in government is to put record levels of funding into THING.",
-        "I would say, in answer to that question, judge us on our record of MATTER.",
-        "Every vote for Jeremy Corbyn is a vote for BADTHING. Only a conservative government can deliver THING. PARTYLINE.",
-        "I'm clear: if human rights laws get in the way of tackling BADTHING, we will change those laws to keep British people safe.",
-        "If we get MATTER right, we can do great things as a country. Vote for me and my team to deliver THING for everyone.",
-        "Let me be clear: MATTER should be the number one priority for any Prime Minister and any Government. PARTYLINE"
+        "I have been very clear, and you can see that our record speaks for itself on the matter of {{MATTER}}, and I am happy to say {{NONSENSE}}. {{PARTYLINE}}",
+        "Look, I'm absolutely clear that {{NONSENSE}}",
+        "That is not the reason why this election has been called, and lets be clear {{NONSENSE}}. {{PARTYLINE}}",
+        "What we have done in government, and what we will continue do in government is to put record levels of funding into {{THING}}",
+        "I would say, in answer to that question, judge us on our record of {{MATTER}}",
+        "Every vote for Jeremy Corbyn is a vote for {{BADTHING}}. Only a conservative government can deliver {{THING}}. {{PARTYLINE}}",
+        "I'm clear: if human rights laws get in the way of tackling {{BADTHING}}, we will change those laws to keep British people safe",
+        "If we get {{MATTER}} right, we can do great things as a country. Vote for me and my team to deliver {{THING}} for everyone",
+        "Let me be clear: {{MATTER}} should be the number one priority for any Prime Minister and any Government. {{PARTYLINE}}",
+        "Now more than ever we need a Prime Minister offering {{THING}}. Give me your backing to deliver for Britain and for you. {{PARTYLINE}}",
+        "As we face this critical election for our country, I've launched my manifesto for Britain's future: {{THING}}. {{PARTYLINE}}",
+        "Your family's {{THING}} is too important to risk. Who will get the best deal for your family & the UK - me or {{BADTHING}}? {{PARTYLINE}}",
+        "Your vote at this election will strengthen my hand and the UK's negotiating position on {{MATTER}}. {{PARTYLINE}}",
+        "My mission is to increase the capacity & diversity of our school system so that every child gets {{THING}}. {{PARTYLINE}}"
     ];
 
     self.nonsense = [
         "every vote for me and my team will strengthen my hand in those negotiations",
         "cuts to the police enable them to do a better job",
-        "the money was just resting in my account",
-        "we can rely on the aging population to provide us with votes and bolster the economy via the new dementia tax"
+        "nurses enjoy consecutive 14 hour shifts",
+        "we can rely on the aging population to provide us with votes and bolster the economy via the new dementia tax",
+        "there has never been a u-turn on {{MATTER}} or {{THING}}",
+        "in relation to {{THING}}, all spending was properly declared. The Conservative Party did make an administrative error on its national spending, as did other parties. We have paid our fine, I would expect other parties to do so"
     ];
 
     self.partyLines = [
-        "Only the Conservative party, led by me, can deliver THING for our country",
-        "When you're at the ballot box be very clear that a vote for me is a vote for five years of THING",
-        "We will create a fairer society, based on THING. So more of us can share MATTER"
-
+        "Only the Conservative party, led by me, can deliver {{THING}} for our country",
+        "When you're at the ballot box be very clear that a vote for me is a vote for five years of {{THING}}",
+        "We will create a fairer society, based on {{THING}} so more of us can share {{MATTER}}",
+        "Only a local Conservative vote will secure {{THING}}, and strengthen our hand in the Brexit negotiations",
+        "Every vote for me and my team is a vote for {{THING}}",
+        "I am confident that we can fulfil the promise of {{THING}} and build a stronger, fairer, even more prosperous Britain",
+        "A vote for the Labour party is a vote for {{BADTHING}}"
     ];
 
     self.matters = [
@@ -84,10 +95,14 @@ theresaMay = function (){
         "swine flu",
         "holding hands with the president of the united states of America",
         "mysterious and unattributed cases of arson",
-        "sales of peace keeping equipment to Saudi Arabia",
+        "record breaking sales of peace-keeping equipment to Saudi Arabia",
         "tax cuts for the rich",
         "the European Convention on Human Rights",
-        "kicking cats to death"
+        "kicking cats to death",
+        "the slow and inexorable advance of Yorkshire over its rivals",
+        "hard brexit",
+        "red, white, and blue brexit",
+        "running through wheat fields"
     ];
 
     self.badThings = [
@@ -96,61 +111,52 @@ theresaMay = function (){
         "Diane Abbots hairstyles",
         "uncontrolled immigration",
         "open borders",
-        "befriending the IRA",
         "a coalition of chaos",
         "upholding human rights",
         "free school meals",
         "human rights laws",
-        "end to end encryption",
-        "running in a field of wheat"
+        "end-to-end encryption",
+        "running in a field of wheat",
+        "hordes of migrants"
     ];
 
     self.things = [
         "magic money trees",
         "leopard print shoes",
         "child poverty",
-        "union jack bunting",
+        "union flag bunting",
         "strong and stable leadership",
-        "oversized beaded necklaces"
+        "oversized beaded necklaces",
+        "food banks",
+        "racism",
+        "civilian casualties",
+        "strong and stable leadership in our national interest",
+        "breakfast... brexit"
     ];
 }
 
 theresaMay.prototype.askQuestion = function (question) {
     var self = this;
 
-    // The question variable is never inspected by TheresaMay.js because it
-    // doesnt really have any effect on the output.
-    var responseArray = [];
-    var nonsenseIterator = 0;
-    var nonsenseCount = Math.floor((Math.random() * 3) + 1);
+    // The question variable is never inspected by TheresaMay.js because it doesnt really have any effect on the output.
+    var tagDetectionRegex = /{{[A-Z]*}}/
+    var larryTheCat = 0;
 
-    responseArray.push(self.openingLines[Math.floor(Math.random() * self.openingLines.length)]);
+    var response = self.openingLines[Math.floor(Math.random() * self.openingLines.length)];
 
-    for (var i = 0; i < responseArray.length; i++) {
-        var responseItem = responseArray[i];
-
-        while (responseItem.includes("MATTER")) {
-            responseItem = responseItem.replace("MATTER", self.matters[Math.floor(Math.random() * self.matters.length)]);
+    while (tagDetectionRegex.test(response)) {
+        response = response.replace("{{MATTER}}", self.matters[Math.floor(Math.random() * self.matters.length)]);
+        response = response.replace("{{NONSENSE}}", self.nonsense[Math.floor(Math.random() * self.nonsense.length)]);
+        response = response.replace("{{PARTYLINE}}", self.partyLines[Math.floor(Math.random() * self.partyLines.length)]);
+        response = response.replace("{{BADTHING}}", self.badThings[Math.floor(Math.random() * self.badThings.length)]);
+        response = response.replace("{{THING}}", self.things[Math.floor(Math.random() * self.things.length)]);     
+        
+        if (larryTheCat >= 25) {
+            // This makes about as much sense as anything else in here...
+            response = "It is with great sadness that I today announce to the nation; Larry the cat has died at the ripe old age of 25";
+            break;
         }
-
-        while (responseItem.includes("NONSENSE")) {
-            responseItem = responseItem.replace("NONSENSE", self.nonsense[Math.floor(Math.random() * self.nonsense.length)]);
-        }        
-
-        while (responseItem.includes("PARTYLINE")) {
-            responseItem = responseItem.replace("PARTYLINE", self.partyLines[Math.floor(Math.random() * self.partyLines.length)]);
-        }        
-
-        while (responseItem.includes("BADTHING")) {
-            responseItem = responseItem.replace("BADTHING", self.badThings[Math.floor(Math.random() * self.badThings.length)]);
-        }        
-
-        while (responseItem.includes("THING")) {
-            responseItem = responseItem.replace("THING", self.things[Math.floor(Math.random() * self.things.length)]);        
-        }        
-
-        responseArray[i] = responseItem;
     }
 
-    return responseArray.join(". ", );
+    return response;
 }
