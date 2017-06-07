@@ -122,16 +122,16 @@ theresaMay.prototype.askQuestion = function (question) {
     for (var i = 0; i < responseArray.length; i++) {
         var responseItem = responseArray[i];
 
+        while (responseItem.includes("PARTYLINE")) {
+            responseItem = responseItem.replace("PARTYLINE", self.partyLines[Math.floor(Math.random() * self.partyLines.length)]);
+        }        
+
         while (responseItem.includes("MATTER")) {
             responseItem = responseItem.replace("MATTER", self.matters[Math.floor(Math.random() * self.matters.length)]);
         }
 
         while (responseItem.includes("NONSENSE")) {
             responseItem = responseItem.replace("NONSENSE", self.nonsense[Math.floor(Math.random() * self.nonsense.length)]);
-        }        
-
-        while (responseItem.includes("PARTYLINE")) {
-            responseItem = responseItem.replace("PARTYLINE", self.partyLines[Math.floor(Math.random() * self.partyLines.length)]);
         }        
 
         while (responseItem.includes("BADTHING")) {
