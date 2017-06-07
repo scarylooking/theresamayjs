@@ -145,5 +145,5 @@ theresaMay.prototype.askQuestion = function (question) {
         responseArray[i] = responseItem;
     }
 
-    return responseArray.join(". ", );
+    return responseArray.join(". ");
 }
