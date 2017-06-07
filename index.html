@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> 
+<style>
+  #contents {
+    margin: auto;
+    margin-top: 2em;
+    width: 50%;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: 50%;
+  }
+
+  .pull-right {
+    float: right;
+  }
+
+  .m-xs {
+    margin: 0.2em;
+  }
+
+  .qa-item {
+    border: 1px lightgray solid;
+    padding: 0.5em;
+  }
+</style>
+
+<div id="contents">
+  <img src="http://www.mintpressnews.com/wp-content/uploads/2016/07/APTOPIX-Britain-Polit_Muha.jpg">
+  <form id="form" class="pure-form">
+    <fieldset>
+      <legend>Ask Theresa May Bot a question:</legend>
+      <input id="question" type="text" class="pure-input-1" required>
+      <button type="submit" class="pure-button pure-button-primary pull-right m-xs">Ask</button>
+    </fieldset>
+  </form>
+  <div id="qa-section">
+  </div>
+</div>
+
+<script type="text/javascript" src="https://rawgithub.com/scarylooking/theresamayjs/master/theresamay.js"></script>
+<script language="javascript" type="text/javascript">
+  var theresaMay = new theresaMay();
+  window.addEventListener("load", function () {
+    var form = document.getElementById("form");
+    var questionInput = document.getElementById("question");
+    var qaSection = document.getElementById("qa-section");
+
+    form.addEventListener("submit", function (evt) {
+      if (form.checkValidity) {
+        var question = document.createTextNode("Q: " + questionInput.value);
+        var answer = document.createTextNode(
+          "TMB: " + theresaMay.askQuestion(questionInput.value));
+
+        var qaItem = document.createElement("div");
+        var qItem = document.createElement("p");
+        var aItem = document.createElement("p")
+        qItem.appendChild(question);
+        aItem.appendChild(answer);
+        qaItem.appendChild(qItem);
+        qaItem.appendChild(aItem);
+        qaItem.classList.add("qa-item");
+        qaItem.classList.add("m-xs");
+        
+        qaSection.insertBefore(qaItem, qaSection.firstChild);
+        questionInput.value = "";
+      }
+
+      evt.preventDefault();
+    });
+  });
+</script>
+
