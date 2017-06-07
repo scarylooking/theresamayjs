@@ -95,7 +95,7 @@ theresaMay = function (){
         "befriending the IRA",
         "a coalition of chaos",
         "upholding human rights",
-        "free school meals",
+        "free school meals"
     ];
 
     self.things = [
@@ -104,7 +104,7 @@ theresaMay = function (){
         "child poverty",
         "union jack bunting",
         "strong and stable leadership",
-        "oversized beaded necklaces",
+        "oversized beaded necklaces"
     ];
 }
 
