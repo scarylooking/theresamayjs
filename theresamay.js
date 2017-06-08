@@ -135,12 +135,14 @@ theresaMay = function (){
     ];
 }
 
+var larryTheCat = 0;
+
 theresaMay.prototype.askQuestion = function (question) {
     var self = this;
-
+    // give ol' larry a 1-3 boost
+    larryTheCat += Math.floor(Math.random() * 3) + 1;
     // The question variable is never inspected by TheresaMay.js because it doesnt really have any effect on the output.
     var tagDetectionRegex = /{{[A-Z]*}}/
-    var larryTheCat = 0;
 
     var response = self.openingLines[Math.floor(Math.random() * self.openingLines.length)];
 
@@ -154,6 +156,7 @@ theresaMay.prototype.askQuestion = function (question) {
         if (larryTheCat >= 25) {
             // This makes about as much sense as anything else in here...
             response = "It is with great sadness that I today announce to the nation; Larry the cat has died at the ripe old age of 25";
+            larryTheCat = 0;
             break;
         }
     }
