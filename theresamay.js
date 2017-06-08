@@ -104,8 +104,8 @@ theresaMay = function (){
         "the slow and inexorable advance of Yorkshire over its rivals",
         "hard brexit",
         "red, white, and blue brexit",
-        "running through wheat fields"
-        "hard-working british people",
+        "running through wheat fields",
+        "hard-working british people"
     ];
 
     self.badThings = [
