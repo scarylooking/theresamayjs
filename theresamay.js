@@ -86,7 +86,9 @@ theresaMay = function (){
         "Only a local Conservative vote will secure {{THING}}, and strengthen our hand in the Brexit negotiations",
         "Every vote for me and my team is a vote for {{THING}}",
         "I am confident that we can fulfil the promise of {{THING}} and build a stronger, fairer, even more prosperous Britain",
-        "A vote for the Labour party is a vote for {{BADTHING}}"
+        "A vote for the Labour party is a vote for {{BADTHING}}",
+        "Only with {{THING}} can we make a success of Brexit and build a stronger Britain."
+        "I'm clear: If {{BADTHING}} gets in the way of {{THING}} we will change laws to keep {{MATTER}} safe."
     ];
 
     self.matters = [
@@ -103,6 +105,7 @@ theresaMay = function (){
         "hard brexit",
         "red, white, and blue brexit",
         "running through wheat fields"
+        "hard-working british people",
     ];
 
     self.badThings = [
@@ -117,7 +120,9 @@ theresaMay = function (){
         "human rights laws",
         "end-to-end encryption",
         "running in a field of wheat",
-        "hordes of migrants"
+        "hordes of migrants",
+        "dementia tax",
+        "encryption"
     ];
 
     self.things = [
