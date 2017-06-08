@@ -87,7 +87,7 @@ theresaMay = function (){
         "Every vote for me and my team is a vote for {{THING}}",
         "I am confident that we can fulfil the promise of {{THING}} and build a stronger, fairer, even more prosperous Britain",
         "A vote for the Labour party is a vote for {{BADTHING}}",
-        "Only with {{THING}} can we make a success of Brexit and build a stronger Britain."
+        "Only with {{THING}} can we make a success of Brexit and build a stronger Britain.",
         "I'm clear: If {{BADTHING}} gets in the way of {{THING}} we will change laws to keep {{MATTER}} safe."
     ];
 
